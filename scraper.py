@@ -13,10 +13,13 @@ driver = webdriver.Chrome(service=service)
 # Open Instagram
 driver.get("https://www.instagram.com/")
 
-# Delay for a few seconds to allow the page to load
+#login
 time.sleep(5)
-
-# Close the driver after use
-driver.quit()
-
-
+username = driver.find_element(By.CSS_SELECTOR, "input[name='username']")
+password = driver.find_element(By.CSS_SELECTOR, "input[name='password']")
+username.clear()
+password.clear()
+username.send_keys("adyeshaha")
+password.send_keys("Kaddu28$%")
+login = driver.find_element(By.CSS_SELECTOR, ("button[type='submit']"))
+login.click()
